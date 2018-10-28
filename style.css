@@ -15,35 +15,45 @@ body{
     right: 0%;
     top: 0%;
     bottom: 0%;
-
     background: url(images/background.png) center center no-repeat fixed;
     background-size: cover;
 }
 .txt{
+    width: 269px;
+    height: 383px;
     font-family: "Exo2.0-Thin", sans-serif;
-    margin: 21px 0 auto 51px;
+    padding: 0 0 0 51px;
 }
 h1{
+    padding: 10px 0 0 0;
     font-family: "Trebuchet MS";
     font-size: 48px;
 }
 h3{
+    padding: 0px 0 0 0;
     font-family: "Trebuchet MS";
     font-size: 24px; 
 }
 h4{
+    padding: 21px 0 0 0;
     font-family: "Trebuchet MS";
     font-size: 16px; 
     font-weight: normal;
     color: #666666; 
  }
 h5{
-    padding: 18px 0;
+    padding: 16px 0 0 0;
     font-family: Trebuchet MS;
     font-size: 14px;
     font-weight: normal;
     color: #666666;
 }
+h6{
+    font-family: "Trebuchet MS";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+  }
 .Head{
     font-family:"Exo2.0-Thin";
     margin: 36px;
@@ -67,18 +77,19 @@ h5{
   }
 
   .Item1, .Item2, .Item3{
-    margin: 0 40px 80px 40px;
+    margin: 0 0 80px 0;
     /* border-style: solid; */
     background: url(images/backCat.png) no-repeat;
-    left: 880px;
-    top: 104px;
     width: 320px;
     height: 480px;
-    z-index: 165;
+  }
+  .blockCircle{
+      width: 100%;
   }
   .circle{
-    margin: 185px 0 0 160px;
-    padding: 8px 0 4px 0;
+    margin: 0 16px 0 224px;
+    width: 81px;
+    height: 81px;
     background: url(images/circle.png) no-repeat center;
     font-family: "Trebuchet MS";
     font-size: 42px;
@@ -87,12 +98,7 @@ h5{
     font-weight: normal;
     text-align: center;
   }
-  h6{
-    font-family: "Trebuchet MS";
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-  }
+
   .inscriptionItem{
     font-size: 13px;
     font-family: "Trebuchet MS";
