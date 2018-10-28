@@ -68,21 +68,8 @@ h6{
     z-index: 176;   
 }
 
-.Prod{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-content: space-between;
-    padding: 0 40px 0 40px;
-  }
 
-  .Item1, .Item2, .Item3{
-    margin: 0 40px 80px 40px;
-    /* border-style: solid; */
-    background: url(images/backCat.png) no-repeat;
-    width: 320px;
-    height: 480px;
-  }
+
   .blockCircle{
       width: 100%;
   }
@@ -114,4 +101,61 @@ h6{
     text-decoration: none;
     border-bottom: 1px dashed #1698d9;
   }
+
+  /* .Item1, .Item2, .Item3{
+    background: url(images/backCat.png) no-repeat;
+  } */
+
+  /*для ПК*/
+  @media screen and (max-width: 1680px) {
+    .Item1, .Item2, .Item3{
+        margin: 0 40px 80px 40px;
+        /* border-style: solid; */
+        background: url(images/backCat.png) no-repeat;
+        width: 320px;
+        height: 480px;
+      }
+      .Prod{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-content: space-between;
+        padding: 0 40px 0 40px;
+      }
+    }
+    /*для планшетов*/
+@media screen and (max-width: 768px) {
+    .Item1, .Item2, .Item3{
+        margin: 0 12px 80px 12px;
+        /* border-style: solid; */
+        background: url(images/backCat.png) no-repeat;
+        width: 320px;
+        height: 480px;
+      }
+      .Prod{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-content: space-between;
+        padding: 0 5px 0 5px;
+      }
+    }
+    /*для смартофонов*/
+@media screen and (max-width: 320px) {    
+        .Item1, .Item2, .Item3{
+            margin: 0 40px 80px 40px;
+            /* border-style: solid; */
+            background: url(images/backCat.png) no-repeat;
+            width: 320px;
+            height: 480px;
+          }
+          .Prod{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-content: space-between;
+            padding: 0 40px 0 40px;
+          }
+        }
+
   
