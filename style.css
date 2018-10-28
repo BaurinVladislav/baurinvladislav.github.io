@@ -30,7 +30,7 @@ h1{
     font-size: 48px;
 }
 h3{
-    padding: 0px 0 0 0;
+    /* padding: 0px 0 0 0; */
     font-family: "Trebuchet MS";
     font-size: 24px; 
 }
@@ -77,7 +77,7 @@ h6{
   }
 
   .Item1, .Item2, .Item3{
-    margin: 0 0 80px 0;
+    margin: 0 40px 80px 40px;
     /* border-style: solid; */
     background: url(images/backCat.png) no-repeat;
     width: 320px;
