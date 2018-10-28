@@ -1,0 +1,111 @@
+*{
+	margin: 0;
+    padding: 0;
+}
+
+@font-face{
+	font-family: "Exo2.0-Thin";
+	src:url(fonts/Exo2.0-Thin.otf);
+	font-style: normal;
+	font-weight: normal;
+}
+
+body{
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    background: url(images/background.png) center center no-repeat fixed;
+    background-size: cover;
+}
+.txt{
+    font-family: "Exo2.0-Thin", sans-serif;
+    margin: 21px 0 auto 51px;
+}
+h1{
+    font-family: "Trebuchet MS";
+    font-size: 48px;
+}
+h3{
+    font-family: "Trebuchet MS";
+    font-size: 24px; 
+}
+h4{
+    font-family: "Trebuchet MS";
+    font-size: 16px; 
+    font-weight: normal;
+    color: #666666; 
+ }
+h5{
+    padding: 18px 0;
+    font-family: Trebuchet MS;
+    font-size: 14px;
+    font-weight: normal;
+    color: #666666;
+}
+.Head{
+    font-family:"Exo2.0-Thin";
+    margin: 36px;
+    font-weight: normal;
+    line-height: 1.2;
+    font-size: 36px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 1px 1px #000000;
+    left: 411px;
+    top: 35.482px;
+    z-index: 176;   
+}
+
+.Prod{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0 40px 0 40px;
+  }
+
+  .Item1, .Item2, .Item3{
+    margin: 0 40px 80px 40px;
+    /* border-style: solid; */
+    background: url(images/backCat.png) no-repeat;
+    left: 880px;
+    top: 104px;
+    width: 320px;
+    height: 480px;
+    z-index: 165;
+  }
+  .circle{
+    margin: 185px 0 0 160px;
+    padding: 8px 0 4px 0;
+    background: url(images/circle.png) no-repeat center;
+    font-family: "Trebuchet MS";
+    font-size: 42px;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+  }
+  h6{
+    font-family: "Trebuchet MS";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+  }
+  .inscriptionItem{
+    font-size: 13px;
+    font-family: "Trebuchet MS";
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 35px auto 0 auto;
+    position: relative;
+
+  }
+  u{
+    font-size: 13px;
+    color: #1698d9;
+    text-decoration: none;
+    border-bottom: 1px dashed #1698d9;
+  }
+  
