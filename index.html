@@ -13,6 +13,8 @@
             (max-width:768), projection" href="style.css" />
         <link rel="stylesheet" media="screen and (orientation: portrait) and 
             (max-width:320px), projection" href="style.css" />  
+        
+        <script src="script.js"></script>
 
     </head>
      <body>
@@ -20,45 +22,45 @@
             <h2 class = "Head"> Ты сегодня покормил кота? </h2>
         </div>
         <div class = "Prod">
-            <div class = "Item1">
+            <div class = "Item" onmouseover="selectedHoverOn1(this)" onmouseout="selectedHoverOff1(this)" onclick="selected1(this)" oncontextmenu="disablet">
                 <div class="txt">
-                    <h4>Сказочное заморское яство</h4>
+                    <h4 class="dynamicText1">Сказочное заморское яство</h4>
                     <h1>Нямушка</h1>
                     <h3>с фуа-гра</h3>
                     <h5>10 порций <br>мышь в подарок</h5>
                 </div>
                 <div class="blockCircle">
-                    <div class="circle">0,5<br><h6>кг</h6></div>
+                    <div class="circle"><span>0,5</span><br><h6>кг</h6></div>
                 </div>
-                <div class="inscriptionItem">
+                <div class="inscriptionItem inscription1">
                         Чего сидишь? Порадуй котэ, <u>купи</u>.
                 </div>
             </div>
-            <div class = "Item2">
+            <div class = "Item" onmouseover="selectedHoverOn2(this)" onmouseout="selectedHoverOff2(this)" onclick="selected2(this)" oncontextmenu="disablet">
                 <div class="txt">
-                    <h4>Сказочное заморское яство</h4>
+                    <h4 class="dynamicText2">Сказочное заморское яство</h4>
                     <h1>Нямушка</h1>
                     <h3>с рыбой</h3>
-                    <h5>400 порций <br>2 мышей в подарок</h5>
+                    <h5>400 порций <br>2 мыши в подарок</h5>
                 </div>
                 <div class="blockCircle">
-                    <div class="circle">2<br><h6>кг</h6></div>
+                    <div class="circle"><span>2</span><br><h6>кг</h6></div>
                 </div>
-                <div class="inscriptionItem">
+                <div class="inscriptionItem inscription2">
                         Чего сидишь? Порадуй котэ, <u>купи</u>.
                 </div>
             </div>
-            <div class = "Item3">
+            <div class = "Item" onmouseover="selectedHoverOn3(this)" onmouseout="selectedHoverOff3(this)" onclick="selected3(this)" oncontextmenu="disablet">
                 <div class="txt">
-                    <h4>Сказочное заморское яство</h4>
+                    <h4 class="dynamicText3">Сказочное заморское яство</h4>
                     <h1>Нямушка</h1>
                     <h3>с курой</h3>
                     <h5>100 порций <br>5 мышей в подарок <br>заказчик доволен</h5>
                 </div>
                 <div class="blockCircle">
-                    <div class="circle">5<br><h6>кг</h6></div>
+                    <div class="circle"><span>5</span><br><h6>кг</h6></div>
                 </div>
-                <div class="inscriptionItem">
+                <div class="inscriptionItem inscription3">
                         Чего сидишь? Порадуй котэ, <u>купи</u>.
                 </div>
             </div>

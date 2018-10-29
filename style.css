@@ -52,7 +52,7 @@ h6{
     font-family: "Trebuchet MS";
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 21px;
   }
 .Head{
     font-family:"Exo2.0-Thin";
@@ -74,10 +74,10 @@ h6{
       width: 100%;
   }
   .circle{
-    margin: 0 16px 0 224px;
+    margin: 5px 16px 0 224px;
     width: 81px;
     height: 81px;
-    background: url(images/circle.png) no-repeat center;
+    /* background: url(images/circle.png) no-repeat center; */
     font-family: "Trebuchet MS";
     font-size: 42px;
     color: #FFFFFF;
@@ -102,16 +102,12 @@ h6{
     border-bottom: 1px dashed #1698d9;
   }
 
-  /* .Item1, .Item2, .Item3{
-    background: url(images/backCat.png) no-repeat;
-  } */
-
   /*для ПК*/
   @media screen and (max-width: 1680px) {
-    .Item1, .Item2, .Item3{
+    .Item{
         margin: 0 40px 80px 40px;
         /* border-style: solid; */
-        background: url(images/backCat.png) no-repeat;
+        background: url(images/backCatDefault.png) no-repeat;
         width: 320px;
         height: 480px;
       }
@@ -125,37 +121,37 @@ h6{
     }
     /*для планшетов*/
 @media screen and (max-width: 768px) {
-    .Item1, .Item2, .Item3{
+    .Item{
         margin: 0 12px 80px 12px;
         /* border-style: solid; */
-        background: url(images/backCat.png) no-repeat;
+        background: url(images/backCatDefault.png) no-repeat;
         width: 320px;
         height: 480px;
-      }
-      .Prod{
+    }
+    .Prod{
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
         align-content: space-between;
         padding: 0 5px 0 5px;
-      }
     }
+}
     /*для смартофонов*/
 @media screen and (max-width: 320px) {    
-        .Item1, .Item2, .Item3{
-            margin: 0 40px 80px 40px;
-            /* border-style: solid; */
-            background: url(images/backCat.png) no-repeat;
-            width: 320px;
-            height: 480px;
-          }
-          .Prod{
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            align-content: space-between;
-            padding: 0 40px 0 40px;
-          }
-        }
+    .Item{
+    margin: 0 40px 80px 40px;
+    /* border-style: solid; */
+    background: url(images/backCatDefault.png) no-repeat;
+    width: 320px;
+    height: 480px;
+    }
+    .Prod{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0 40px 0 40px;
+    }
+}
 
   
