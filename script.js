@@ -82,13 +82,13 @@ function selectedHoverOn2(obj){
 
 //Для третьего элемента
 function selected3(obj) { 
-    if(onElement3==false)
+    if(onElement3==false && disabledElement3==false)
         {
             obj.style.background = 'url(images/backCatSelected.png)';
             inscription3[0].innerHTML='Филе из цыплят с трюфелями в бульоне.';
             onElement3 = true;
         }
-        else if (onElement3==true)
+        else if (onElement3==true && disabledElement3==false)
         {
             obj.style.background = 'url(images/backCatDefaultHover.png)';
             inscription3[0].innerHTML= "Чего сидишь? Порадуй котэ, <u>купи</u>.";
@@ -97,21 +97,42 @@ function selected3(obj) {
     
 }
 function selectedHoverOff3(obj){
-    if(onElement3==true){
+    if(onElement3==true && disabledElement3==false){
         dynamicText3[0].style.color = "#d91667";
         dynamicText3[0].innerHTML='Котэ не одобряет?';
     }
-    else{
+    else if(disabledElement3==false){
         dynamicText3[0].style.color = '#666666';
         obj.style.background = 'url(images/backCatDefault.png)';
     }
 }
 function selectedHoverOn3(obj){
-    if(onElement3==true){
+    console.log(obj)
+    if(onElement3==true && disabledElement3==false){
         dynamicText3[0].style.color = "#666666";
         dynamicText3[0].innerHTML='Сказочное заморское яство';
     }
-    else if(onElement3==false){
+    else if(onElement3==false && disabledElement3==false){
         obj.style.background = 'url(images/backCatDefaultHover.png)';
         }
+}
+ 
+
+var disabledElement1 = false;// если true, значит товара нету.
+var disabledElement2 = false;// если true, значит товара нету.
+var disabledElement3 = true;// если true, значит товара нету.
+
+var element3 = document.getElementById('element3');
+var headerElement3 = document.getElementsByClassName('headerElement3');
+
+function disabledElements(){
+    console.log(document.getElementById('element3').txt);
+    if(disabledElement3==true){
+        document.getElementById('element3').style.background = 'url(images/backCatDisabled.png)';
+        document.getElementsByClassName('headerElement3')[0].style.color = "#b3b3b3";
+        document.getElementsByClassName('headerElement3')[1].style.color = "#b3b3b3";
+        inscription3[0].innerHTML='Печалька, с курой закончился.';
+        document.getElementsByClassName('inscription3')[0].style.color = "#ffff66";
+    }
+    
 }

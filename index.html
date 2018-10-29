@@ -17,12 +17,12 @@
         <script src="script.js"></script>
 
     </head>
-     <body>
+     <body  onload="disabledElements()">
          <div class = "Cont">
             <h2 class = "Head"> Ты сегодня покормил кота? </h2>
         </div>
         <div class = "Prod">
-            <div class = "Item" onmouseover="selectedHoverOn1(this)" onmouseout="selectedHoverOff1(this)" onclick="selected1(this)" oncontextmenu="disablet">
+            <div class = "Item" onmouseover="selectedHoverOn1(this)" onmouseout="selectedHoverOff1(this)" onclick="selected1(this)" oncontextmenu="disabledElement1">
                 <div class="txt">
                     <h4 class="dynamicText1">Сказочное заморское яство</h4>
                     <h1>Нямушка</h1>
@@ -36,7 +36,7 @@
                         Чего сидишь? Порадуй котэ, <u>купи</u>.
                 </div>
             </div>
-            <div class = "Item" onmouseover="selectedHoverOn2(this)" onmouseout="selectedHoverOff2(this)" onclick="selected2(this)" oncontextmenu="disablet">
+            <div class = "Item" onmouseover="selectedHoverOn2(this)" onmouseout="selectedHoverOff2(this)" onclick="selected2(this)" oncontextmenu="disabledElement2">
                 <div class="txt">
                     <h4 class="dynamicText2">Сказочное заморское яство</h4>
                     <h1>Нямушка</h1>
@@ -50,11 +50,11 @@
                         Чего сидишь? Порадуй котэ, <u>купи</u>.
                 </div>
             </div>
-            <div class = "Item" onmouseover="selectedHoverOn3(this)" onmouseout="selectedHoverOff3(this)" onclick="selected3(this)" oncontextmenu="disablet">
-                <div class="txt">
+            <div class = "Item" id="element3" onmouseover="selectedHoverOn3(this)" onmouseout="selectedHoverOff3(this)" onclick="selected3(this)">
+                <div class="txt" name="txt">
                     <h4 class="dynamicText3">Сказочное заморское яство</h4>
-                    <h1>Нямушка</h1>
-                    <h3>с курой</h3>
+                    <h1 class="headerElement3" name="headerElement3">Нямушка</h1>
+                    <h3 class="headerElement3">с курой</h3>
                     <h5>100 порций <br>5 мышей в подарок <br>заказчик доволен</h5>
                 </div>
                 <div class="blockCircle">
