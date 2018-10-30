@@ -1,4 +1,4 @@
-# Ответы на тестовые вопросы для [FunBox](https://funbox.ru) для [вакансии "Разработчик HTML/CSS"](https://hh.ru/vacancy/28206274) .
+# Ответы на тестовые вопросы для [FunBox](https://funbox.ru) ( [вакансии "Разработчик HTML/CSS"](https://hh.ru/vacancy/28206274) ).
  Скачать тестовое задание целиком можно здесь: <https://dl.funbox.ru/qt-htmlcss.zip> .
 
 ***
@@ -129,9 +129,9 @@ Engine)
 
 > ### ***На этом уровне находится практическое задание, макет к которому вы найдете в том же архиве, что и этот файл. Скачать тестовое задание целиком можно здесь: <https://dl.funbox.ru/qt-htmlcss.zip> .***
 
-Ccылка на демонстрацию решения: <https://baurinvladislav.github.io> .
+Ccылка на демонстрацию решения: <https://baurinvladislav.github.io/funbox/> .
 
-Ссылка на репозиторий GitHub с выполненым заданием - <https://github.com/BaurinVladislav/BaurinVladislav.github.io.git> .
+Ссылка на репозиторий GitHub с выполненым заданием - <https://github.com/BaurinVladislav/BaurinVladislav.github.io/tree/master/funbox> .
 
 ---
 
