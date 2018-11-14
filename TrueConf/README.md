@@ -1,6 +1,7 @@
 # TrueConf
 A test Site for the company TrueConf.
-
+### Результат реализации задания: [https://baurinvladislav.github.io/TrueConf/TrafficLights/#/](https://baurinvladislav.github.io/TrueConf/TrafficLights/#/)
+### Так же ссылка на репозиторий с выполненым заданием: [https://github.com/BaurinVladislav/BaurinVladislav.github.io/tree/master/TrueConf/TrafficLights](https://github.com/BaurinVladislav/BaurinVladislav.github.io/tree/master/TrueConf/TrafficLights)
 ### Требуется разработать одностраничное приложение (SPA) - эмулятор светофора.
 ---
 
