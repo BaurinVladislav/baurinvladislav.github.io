@@ -26,7 +26,5 @@ export default {
     .alert{
       color: black;
     }
-    .screen{
-    }
 </style>
 
