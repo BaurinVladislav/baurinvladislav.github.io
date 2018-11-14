@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-    <h1>Traffic Lights</h1>
-    <h2>time to swith</h2>
+    <h1 class="alert">Traffic Lights</h1>
+    <router-view class="screen"></router-view>
     <hr>
-    <router-view></router-view>
-    <hr>
+    <h5>Implementation of a test appfor the company "TrueConf".</h5>
   </div>
 </template>
 
@@ -20,30 +19,14 @@ export default {
 
 <style>
   #app {
-      font-family: 'Avenir', Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       text-align: center;
       color: #2c3e50;
-      margin-top: 60px;
-    }
-
-    h1, h2 {
       font-weight: normal;
     }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
+    .alert{
+      color: black;
     }
-
-    li {
-      display: inline-block;
-      margin: 0 10px;
-    }
-
-    a {
-      color: #42b983;
+    .screen{
     }
 </style>
 
