@@ -99,14 +99,8 @@
         margin: 0 auto;
         width: 600px;
     }
-    .flip-enter{
-
-    }
     .flip-enter-active{
         animation: flipInX 0.3s linear;
-    }
-    .flip-leave{
-
     }
     .flip-leave-active{
         animation: flipOutX 0.3s linear;
