@@ -124,7 +124,7 @@ Engine)
 
 > ### ***На этом уровне находится практическое задание, макет к которому вы найдете в том же архиве, что и этот файл. Скачать тестовое задание целиком можно здесь: <https://dl.funbox.ru/qt-htmlcss.zip> .***
 
-### __Ccылка на демонстрацию решения: <https://baurinvladislav.github.io/funbox/> .__
+### __Ccылка на демонстрацию решения: <https://baurinvladislav.github.io/funbox/SiteCat/> .__
 
 ### __Ссылка на репозиторий GitHub с выполненым заданием - <https://github.com/BaurinVladislav/BaurinVladislav.github.io/tree/master/funbox> .__
 
