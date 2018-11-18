@@ -1,4 +1,4 @@
-# board-flights
+# app-board-flights
 
 > A Vue.js project
 
