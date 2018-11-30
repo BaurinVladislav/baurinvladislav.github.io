@@ -24,7 +24,6 @@ class App extends Component {
           <div className="container">
             <h1>Тестовое задание - изменить фон сайта</h1>
             <br/>
-              {/* <h1>Цвет1:{this.state.bgColor1}, цвет2: {this.state.bgColor2}</h1> */}
               <ColorForm updateColor={this.updateColor}></ColorForm>
           </div>
         </div>

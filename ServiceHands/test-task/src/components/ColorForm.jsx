@@ -1,5 +1,4 @@
 import React from 'react';
-import './style.css'
 
 class ColorForm extends React.Component{
     constructor(props){
@@ -8,13 +7,11 @@ class ColorForm extends React.Component{
             colorOne: '',
             colorTwo: '',
             error:''
-            //validColor: true
             
         };
         this.ouputColor = this.ouputColor.bind(this);
         this.handleColorOneChange = this.handleColorOneChange.bind(this);
         this.handleColorTwoChange = this.handleColorTwoChange.bind(this);
-       // this.validColor = this.validColor.bind(this);
     }
 
     
@@ -39,31 +36,6 @@ class ColorForm extends React.Component{
 
     }
 
-    // validColor(event){
-    //     var valid= true;
-    //     var i=1;
-    //     console.log("i= " + i)
-    //     console.log("event.target.value.length = " + event.target.value.length)
-    //     console.log("event.target.value.charAt(i) = " + event.target.value.charAt(i))
-    //     for(event.target.value.charAt(i); event.target.value.charAt(i) <= event.target.value.length; i++) 
-    //     {
-    //         console.log("event.target.value.length = " + event.target.value.length)
-    //         console.log("event.target.value.charAt(i) = " + event.target.value.charAt(i))
-    //         console.log("i= " + i)
-    //         if(
-    //             event.target.value.charAt(i) === '1'||
-    //             event.target.value.charAt(i) === '2'||
-    //             event.target.value.charAt(i) === ''
-    //             )
-    //             valid= true
-    //         else valid= false
-    //         if (valid === false){
-    //                 this.setState({
-    //                 validColor: valid  
-    //             })
-    //         }
-    //     }
-    // }
 
     handleColorOneChange(event) {
         if(
@@ -80,11 +52,9 @@ class ColorForm extends React.Component{
     }
 
     handleColorTwoChange(event) {
-       // this.validColor();
         if(
             (event.target.value.length === 7)&&
             (event.target.value.charAt(0)==='#')
-            //&&(this.state.validColor === true)
             ){
                 console.log("Изменислся второй цвет: " + event.target.value)
                 console.log("Изменислся второй цвет: " + event.target.value);
