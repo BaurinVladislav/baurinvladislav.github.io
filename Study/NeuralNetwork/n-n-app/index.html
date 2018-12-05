@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>n-n-app</title>
+    <script src="brain.js/browser.min.js"></script>
+    <style>
+        body {
+            background-color: #333;
+        }
+
+        #canv {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            background-color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1> "C" - очистка холста</h1>
+    <h1> "X" - сохранить изображение в обучающие данные </h1>
+    <h1> "B" - обучить нейросеть</h1>
+    <h1> "N" - использовать нейросеть</h1>
+    <!-- <h1> "S" - сохранить обучающие данные в файл </h1>
+    <h1>"D" - загрузить обучающие данные из файла </h1> -->
+    <canvas id="canv" style="display: block;">
+        Ваш браузер устарел, обновитесь.
+    </canvas>
+
+    <script>
+
+        function DCanvas(el) {
+            const ctx = el.getContext('2d');
+            const pixel = 20;
+
+            let is_mouse_down = false;
+
+            canv.width = 560;
+            canv.height = 560;
+
+            this.drawLine = (x1, y1, x2, y2, color = 'gray') => { //рисовать линию
+                ctx.beginPath();
+                ctx.strokeStyle = color;
+                ctx.lineJoin = 'miter';
+                ctx.lineWidth = '1';
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.stroke();
+            }
+
+            this.drawCell = (x, y, w, h) => { //рисовать ячейки
+                ctx.fillStyle = 'blue';
+                ctx.strokeStyle = 'blue';
+                ctx.lineJoin = 'miter';
+                ctx.lineWidth = 1;
+                ctx.rect(x, y, w, h);
+                ctx.fill();
+            }
+
+            this.clear = () => { //очистка холста
+                ctx.clearRect(0, 0, canv.width, canv.height)
+            }
+
+            this.drawGrid = () => { //сетка
+                const w = canv.width;
+                const h = canv.height;
+                const p = w / pixel;
+
+                const xStep = w / p;
+                const yStep = h / p;
+
+                for (let x = 0; x < w; x += xStep) {
+                    this.drawLine(x, 0, x, h);
+                }
+                for (let y = 0; y < h; y += yStep) {
+                    this.drawLine(0, y, w, y);
+                }
+            }
+
+            this.calculate = (draw = false) => { //расчет кубиков по линии
+                const w = canv.width;
+                const h = canv.height;
+                const p = w / pixel;
+
+                const xStep = w / p;
+                const yStep = h / p;
+
+                const vector = [];
+                let _draw = [];
+
+                for (let x = 0; x < w; x += xStep) {
+                    for (let y = 0; y < h; y += yStep) {
+                        const data = ctx.getImageData(x, y, xStep, yStep)
+
+                        let nonEmptyPixelsCount = 0;
+                        for (i = 0; i < data.data.length; i += 10) {
+                            const isEmpty = data.data[i] === 0;
+
+                            if (!isEmpty) {
+                                nonEmptyPixelsCount += 1;
+                            }
+                        }
+                        if (nonEmptyPixelsCount > 1 && draw) {
+                            _draw.push([x, y, xStep, yStep]);
+                        }
+
+                        vector.push(nonEmptyPixelsCount > 1 ? 1 : 0);
+                    }
+
+                }
+                if (draw) {
+                    this.clear();
+                    this.drawGrid();
+
+                    for (_d in _draw) {
+                        this.drawCell(_draw[_d][0], _draw[_d][1], _draw[_d][2], _draw[_d][3]);
+                    }
+                }
+                return vector;
+            }
+
+            el.addEventListener('mousedown', (e) => {
+                is_mouse_down = true;
+                ctx.beginPath();
+            })
+            el.addEventListener('mouseup', (e) => {
+                is_mouse_down = false;
+            })
+
+            el.addEventListener('mousemove', (e) => {
+                if (is_mouse_down) {
+                    ctx.fillStyle = 'red';
+                    ctx.strokeStyle = 'red';
+                    ctx.lineWidth = pixel;
+
+                    ctx.lineTo(e.offsetX, e.offsetY);
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.arc(e.offsetX, e.offsetY, pixel / 2, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    ctx.beginPath();
+                    ctx.moveTo(e.offsetX, e.offsetY);
+                }
+
+            });
+        }
+
+        let vector = []; //вектор данных
+        let net = null; // нейросеть
+        let train_data = []; // обученные данные 
+
+
+        const d = new DCanvas(document.getElementById("canv"));
+
+        //
+
+
+
+
+        document.addEventListener('keypress', (e) => {
+            if (e.key.toLowerCase() == 'c') {
+                d.clear();
+            }
+
+            if (e.key.toLowerCase() == 'v') {
+                vector = d.calculate(true);
+
+                //обучение
+                if (confirm('Positive?')) {
+                    train_data.push({
+                        input: vector,
+                        output: { positive: 1 }
+                    });
+                } else {
+                    train_data.push({
+                        input: vector,
+                        output: { negative: 1 }
+                    });
+                }
+            }
+
+            if (e.key.toLowerCase() == 'n') {
+                const result = brain.likely(d.calculate(), net);
+                alert(result);
+            }
+
+
+            if (e.key.toLowerCase() == 'b') {
+                net = new brain.NeuralNetwork();
+                net.train(train_data, { log: true });
+
+            }
+
+            if (e.key.toLowerCase() == 'x') {
+
+                vector = d.calculate(true);
+
+                let inNumber = prompt('Каким было введенное число?', "Введите число в интервале 5..9");
+                if (inNumber == 5) {
+                    alert("Введено 5");
+                    train_data.push({
+                        input: vector,
+                        output: { number_5: 1 }
+                    });
+                }
+                else if (inNumber == 6) {
+                    alert("Введено 6");
+                    train_data.push({
+                        input: vector,
+                        output: { number_6: 1 }
+                    });
+                }
+                else if (inNumber == 7) {
+                    alert("Введено 7");
+                    train_data.push({
+                        input: vector,
+                        output: { number_7: 1 }
+                    });
+                }
+                else if (inNumber == 8) {
+                    alert("Введено 8");
+                    train_data.push({
+                        input: vector,
+                        output: { number_8: 1 }
+                    });
+                }
+                else if (inNumber == 9) {
+                    alert("Введено 9");
+                    train_data.push({
+                        input: vector,
+                        output: { number_9: 1 }
+                    });
+                }
+                else {
+                    alert("Введено неверное число. Вводите значения в интревале от 5 до 9.")
+                }
+            }
+            // if (e.key.toLowerCase() == 's') {
+            //     alert('Загрузка...');
+            //     var cd = () => {
+            //         try {
+
+            //             var fileDescriptor = imns.FIO.openNode("./train_data.json");
+            //             imns.FIO.writeTextFile(fileDescriptor, JSON.stringify(train_data, null, 4));
+            //         } catch (e) {
+            //             return e;
+            //         }
+            //         return true;
+            //     }
+            //     // if (cb == true) {
+            //     //     alert('Сохранено успешно!');
+            //     // } else {
+            //     //     alert('Ошибка сохранения:' + cd);
+            //     // }
+            // }
+
+            // if (e.key.toLowerCase() == 'd') {
+            //     train_data = () => {
+            //         try {
+            //             var fileDescriptor = imns.FIO.openNode("S./train_data.json");
+            //             var text = imns.FIO.readTextFile(fileDescriptor);
+            //             var obj = JSON.parse(text);
+            //             return obj;
+            //         } catch (e) {
+            //             return false;
+            //         }
+            //     }
+            //     console.log("Загружен файл")
+            //     console.log(train_data)
+            //     alert('Файл загружен');
+            // }
+        });
+
+
+    </script>
+</body>
+
+</html>
