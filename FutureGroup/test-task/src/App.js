@@ -5,8 +5,13 @@ class App extends Component {
   render() {
     return(
       <div>
-        <h1>Titel</h1>
+      <div className="container" style={{height: '80vh'}}>  
+        <h1 className="container" >Titel</h1>
         <Tables />
+      </div>
+      <div className="container" style={{height: '50vh'}}>
+      {/* <h2 >ga</h2> */}
+      </div>
       </div>
     );
   }
