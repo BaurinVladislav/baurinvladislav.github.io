@@ -31,7 +31,7 @@ class Table extends Component {
       data.forEach((item, i) => {
         item._id = i + 1;
       });
-      // data.id.sort(compareNumeric)
+      
       this.setState({ data })
 
     };
